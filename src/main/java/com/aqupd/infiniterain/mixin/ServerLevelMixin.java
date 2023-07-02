@@ -16,7 +16,7 @@ public class ServerLevelMixin {
   @Inject(method = "advanceWeatherCycle",
     at = @At(target = "Lnet/minecraft/world/level/GameRules;getBoolean(Lnet/minecraft/world/level/GameRules$Key;)Z", value = "INVOKE")
   )
-  private void test(CallbackInfo ci) {
+  private void constantRain(CallbackInfo ci) {
     ServerLevel level = ((ServerLevel) (Object) this);
     if(!level.isRaining()) {
       this.serverLevelData.setThunderTime(0);
