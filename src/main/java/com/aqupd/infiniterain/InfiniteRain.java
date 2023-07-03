@@ -25,10 +25,10 @@ public class InfiniteRain {
 
     @SubscribeEvent
     public void onServerTick(TickEvent.ServerTickEvent event) {
-        if (Objects.equals(event.getPhase(), EventPriority.NORMAL)) {
+        if (event.phase.equals(TickEvent.Phase.START)) {
             MinecraftServer server = event.getServer();
             GameRules gameRules = server.getGameRules();
-            if((System.currentTimeMillis() - time) == 30000L && gameRules.getRule(GameRules.RULE_WEATHER_CYCLE).get()) {
+            if((System.currentTimeMillis() - time) >= 30000L && gameRules.getRule(GameRules.RULE_WEATHER_CYCLE).get()) {
                 time = System.currentTimeMillis();
                 gameRules.getRule(GameRules.RULE_WEATHER_CYCLE).set(false, server);
             }
