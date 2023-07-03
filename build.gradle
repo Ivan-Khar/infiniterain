@@ -1,13 +1,14 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net/' }
+        maven { url = 'https://repo.spongepowered.org/maven' }
         maven { url = 'https://maven.parchmentmc.org' }
         gradlePluginPortal()
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.spongepowered.mixin:0.7.+'
+        classpath 'org.spongepowered:mixingradle:0.7.+'
     }
 }
 
@@ -17,7 +18,7 @@ apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0'
+version = '1.16.5-1.0'
 group = 'com.aqupd.infiniterain' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'infiniterain'
 
