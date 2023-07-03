@@ -18,7 +18,7 @@ public abstract class ServerLevelMixin {
   )
   private void constantRain(CallbackInfo ci) {
     ServerLevel level = ((ServerLevel) (Object) this);
-    if(!level.isRaining()) {
+    if(!level.isRaining() || level.isThundering()) {
       this.serverLevelData.setThunderTime(0);
       this.serverLevelData.setThundering(false);
       this.serverLevelData.setRainTime(12000);
